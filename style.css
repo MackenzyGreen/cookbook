@@ -1,0 +1,364 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: oldlace;
+    overflow: hidden;
+}
+
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 25px;
+    background-color: brown;
+}
+
+.logo{
+    color: cornsilk;
+    letter-spacing: 2px;
+    font-size: xx-large;
+}
+
+.searchDiv{
+    width: 50vw;
+    height: 4vh;
+}
+
+.searchDiv input[type="text"]{
+    width: 80%;
+    height: 100%;
+    font-size: large;
+    padding: 0px 5px;
+}
+
+.searchDiv input[type="button"]{
+    width: 10%;
+    height: 100%;
+    border: none;
+    border-radius: 3px;
+    vertical-align: top;
+    cursor: pointer;
+}
+
+header ul{
+    width: 13%;
+    list-style: none;
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+}
+
+header ul li{
+    color: cornsilk;
+    font-size: 1.1rem;
+    border-radius: 3px;
+    height: 100%;
+    width: 100%;
+    padding: 5px;
+}
+
+header ul li:hover{
+    background-color: rgba(255, 255, 255, 0.247);
+}
+
+.main-container{
+    width: 100vw;
+    height: 95.5vh;
+    overflow: hidden;
+    display:flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.dishTypeDiv{
+    position: relative;
+    width: 10%;
+    height: 99%;
+    border-right: 2px dashed black;
+
+    overflow-y: scroll; 
+    -ms-overflow-style: none;
+}
+
+.dishTypeDiv::-webkit-scrollbar{
+    display: none;
+}
+
+.dishTypeDiv ul{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    min-width: 100%;
+    list-style: none;
+    padding: 5px 5px 0 5px;
+    margin-bottom: 10px;
+}
+
+.dishTypeDiv ul li{
+    width: 100%;
+}
+
+.button{
+    width: 100%;
+    height: 75px;
+    display: flex;
+    margin-top: 5px;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid black;
+    border-radius: 12px;
+    background-color: #c8d9e6;
+    color: black;
+    cursor: pointer;
+    font-size: 1.2rem;
+}
+
+.button:hover{
+    background-color: #85bbe4;
+}
+
+.button-toggle{
+    background-color: #0c83dd;
+}
+
+.recipeCardDiv{
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 10px;
+}
+
+.recipeCard{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    border: 1px solid black;
+    border-radius: 3px;
+    background-color: whitesmoke;
+    padding: 10px;
+    cursor: pointer;
+    position: relative;
+}
+
+#card-desc{
+    margin: 5px 0;
+    width: 75%;
+}
+
+.tags{
+    display: flex;
+    justify-content: space-evenly;
+    margin: 0 auto;
+    width: 65%;
+}
+
+#dType{
+    padding: 5px;
+    background-color: palegreen;
+    border-radius: 10px;
+}
+
+#prepTime{
+    padding: 5px;
+    background-color: pink;
+    border-radius: 10px;
+}
+
+#cookTime{
+    padding: 5px;
+    background-color: powderblue;
+    border-radius: 10px;
+}
+
+.view-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    overflow-y: scroll;
+}
+
+.title-info{
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    border: 1px solid black;
+    margin-top: 10px;
+}
+
+.title-info h2{
+    padding: 10px;
+    width: 100%;
+    text-align: center;
+}
+
+.title-info h4{
+    color: rgb(53, 53, 53);
+    width: 100%;
+    text-align: center;
+    padding-bottom: 5px;
+    border-bottom: 1px solid black;
+}
+
+.view-tags{
+    width: 75%;
+    display:flex;
+    margin: 10px 0;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.social{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    border-top: 1px solid black;
+    padding: 5px 10px;
+}
+
+.social ul{
+    width: 30%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    list-style: none;
+}
+
+.social input[type="button"]{
+    width: 10%;
+    height: 2rem;
+}
+
+#divHeader{
+    margin-top: 15px;
+    margin-bottom: 10px;
+}
+
+.ingredients{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-gap: 5px;
+    width: 70%;
+    text-align: center;
+    padding: 10px 30px;
+    list-style: none;
+    border: 1px solid black;
+}
+
+.ingredients li{
+    width: 80%;
+    height: 100%;
+    border-bottom: 1px dashed black;
+    padding-bottom: 5px;
+}
+
+.directions{
+    width: 70%;
+}
+
+.desk-directions{
+    text-align: center;
+}
+
+.mobile-directions{
+    display: none;
+    list-style-type: decimal;
+}
+
+.split-container{
+    width: 100%;
+    height: 95.5vh;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#half1{
+    width: 50%;
+    height: 100%;
+    border-right: 1px dashed black;
+    text-align: center;
+}
+
+#half2{
+    width: 50%;
+    height:100%;
+    text-align: center;
+}
+
+.split-container form{
+    display: flex;
+    justify-content: center;
+    padding-top: 20vh;
+}
+
+.split-container form table tr td{
+    text-align: end;
+}
+
+.split-container h2{
+    margin-bottom: 15px;
+}
+
+.split-container h4, .split-container input{
+    margin-bottom: 10px;
+}
+
+#center{
+    text-align: center;
+}
+
+.split-container input{
+    width: 200px;
+    height: 30px;
+    font-size: 0.9rem;
+    border: 1px solid black;
+    border-radius: 3px;
+}
+
+.split-container input[type="email"], .split-container input[type="password"]{
+    padding: 1px 5px;
+}
+
+.settingsContainer{
+    width: 96vw;
+    padding: 2vw;
+}
+
+.optionPanel{
+    width: 25%;
+    height: 50px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 0 auto;
+    margin-bottom: 25px;
+}
+
+.optionPanel input{
+    width: 45%;
+    height: 100%;
+    border: 1px solid black;
+    border-radius: 3px;
+}
+
+.optionPanel input:hover{
+    background-color: lightsteelblue;
+}
