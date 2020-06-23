@@ -2,9 +2,9 @@
 
     session_start();
 
-    $server = "localhost";
-    $user = "crossLaptop";
-    $pwd = 'diet8Coke15';
+    $server='localhost';
+    $user='sammy';
+    $pwd='Bismarck0024!';
     $dbase = "cookbook";
 
     $conn = mysqli_connect($server, $user, $pwd, $dbase);
@@ -16,14 +16,13 @@
     $results = mysqli_query($conn, $query);
     
     if(mysqli_num_rows($results)==0){
-        //echo "Password: {$_POST['logPwd']}<br> $query";
-        header("Location: /cookbook/account/login.php?e=3");
+        header("Location: http://68.183.125.175/portfolio/demo/cookbook/account/login.php?e=3");
     }else{
         $row=mysqli_fetch_array($results);
         $_SESSION['email'] = $row['email'];
         
 
-        header("Location: /cookbook/index.php");
+        header("Location: http://68.183.125.175/portfolio/demo/cookbook/index.php");
     }
 
 ?>

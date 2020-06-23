@@ -1,4 +1,14 @@
-<?php session_start(); ?>
+<?php 
+    session_start(); 
+
+    if(isset($_SESSION['email'])){
+        echo "<script> owner = ".json_encode($_SESSION['email'])."</script>";
+    }
+    else{
+        echo "<script> owner = 'nopenope' </script>";
+    }
+    
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -6,77 +16,33 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <script src="./javascript/index.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="./javascript/view-recipe.js"></script>
+    <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v7.0&appId=1885065338296220&autoLogAppEvents=1" nonce="UxP4ZvUU"></script>
+    <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
     <title>Cookbook</title>
 </head>
 <body>
     <header>
-        <a href="index.php"><h2 class="logo">Cookbook</h2></a>
-        <ul>
+        <a href="http://68.183.125.175/portfolio/demo/cookbook/index.php"><h2 class="logo">Cookbook</h2></a>
+        <ul class='nav-links'>
             <?php
                 include("./nav-buttons.php");
             ?>
         </ul>
+        <div class="burger">
+            <div class="line1"></div>
+            <div class="line2"></div>
+            <div class="line3"></div>
+        </div>
     </header>
 
-    <?php //entire thing populated from php or api pull after done styling it. ?>
     <div class="view-container">
 
-        <div class="title-info">
-            <h2>Yummy Chicken</h2>
-            <h4>A skillet full of diced chicken covered in cheese and a special blend of seasonings. YUMMY!</h4>
-            <div class="view-tags">
-                <p id="dType">Main Dish</p>
-                <p id="prepTime">Prep: 5 minutes</p>
-                <p id="cookTime">Cook: 25 minutes</p>
-            </div>
-            <div class="social">
-                <?php //add api to share on social media ?>
-                <ul>
-                    <li>Facebook</li>
-                    <li>Twitter</li>
-                    <li>Pintrest</li>
-                </ul>
-                <?php 
-                    //will set onclick/value to adjust via api call and javascript.
-                ?>
-                <input type="button" id='optionButton' value="Save">
-            </div>
-        </div>
-        <h2 id='divHeader'>Ingredients</h2>
-        <ul class="ingredients">
-            <li> Chicken</li>
-            <li> Spice 1</li>
-            <li> Spice 2</li>
-            <li> Spice 3</li>
-            <li> Cheese</li>
-        </ul>
-
-
-        <h2 id='divHeader'>Directions</h2>
-        <div class="directions">
-            <p class='desk-directions'>
-                Dice chicken up and place into skillet. Cover the chicken very well with spice 1. Add about half as much of spice 2 to the chicken. A dash or two of Spice 3. Mix the skillet of chicken by hand until it is throughly mixed. 
-                Cook the chicken mix on high heat until the chicken is done. Turn the heat on low and cover in cheddar cheese. Occassionaly stir until the cheese is completely melted. Enjoy!
-            </p>
-            
-            <br><br>
-
-            <ul class='mobile-directions'>
-                <li>Dice chicken up and place into skillet</li>
-                <li>Cover the chicken very well with spice 1</li>
-                <li>Add about half as much of spice 2 to the chicken</li>
-                <li>A dash or two of Spice 3</li>
-                <li>Throughly mix by hand</li>
-                <li>Cook until chicken is done</li>
-                <li>Turn heat down to low and cover in cheddar cheese</li>
-                <li>Occasionaly stir until cheese is melted</li>
-                <li>ENJOY</li>
-            </ul>
-        </div>
+        
     </div>
     
 
-
+    <script src="./javascript/nav.js"></script>
 </body>
 </html>

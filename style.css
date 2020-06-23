@@ -5,12 +5,14 @@
 }
 
 body{
+    position: relative;
     background-color: oldlace;
-    overflow: hidden;
+    overflow-x: hidden;
 }
 
 header{
     display: flex;
+    height: 7vh;
     justify-content: space-between;
     align-items: center;
     padding: 5px 25px;
@@ -25,11 +27,11 @@ header{
 
 .searchDiv{
     width: 50vw;
-    height: 4vh;
+    height: 60%;
 }
 
 .searchDiv input[type="text"]{
-    width: 80%;
+    width: 89%;
     height: 100%;
     font-size: large;
     padding: 0px 5px;
@@ -50,6 +52,7 @@ header ul{
     display:flex;
     justify-content: space-between;
     align-items: center;
+    overflow-x: hidden;
 }
 
 a{
@@ -70,9 +73,25 @@ header ul li:hover{
     background-color: rgba(255, 255, 255, 0.247);
 }
 
+.mob{
+    display: none;
+}
+
+.burger{
+    display: none;
+}
+
+.burger div{
+    width: 25px;
+    height: 3px;
+    background-color: rgb(226,226,226);
+    margin: 5px;
+    transition: all 0.3s ease;
+}
+
 .main-container{
     width: 100vw;
-    height: 95.5vh;
+    height: 93vh;
     overflow: hidden;
     display:flex;
     justify-content: space-between;
@@ -82,7 +101,7 @@ header ul li:hover{
 .dishTypeDiv{
     position: relative;
     width: 10%;
-    height: 99%;
+    height: 100%;
     border-right: 2px dashed black;
 
     overflow-y: scroll; 
@@ -131,15 +150,29 @@ header ul li:hover{
     background-color: #0c83dd;
 }
 
-.recipeCardDiv{
+.recipeCardDiv, .recipeCardDiv-personal{
+    position: relative;
     width: 100%;
+    max-height: 87vh;
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-gap: 10px;
+
+    overflow-y: scroll; 
+    -ms-overflow-style: none;
+}
+
+.recipeCardDiv-personal{
+    max-height: 80vh;
+}
+
+.recipeCardDiv::-webkit-scrollbar, .recipeCardDiv-personal::-webkit-scrollbar{
+    display: none;
 }
 
 .recipeCard{
     width: 100%;
+    max-height: 150px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -151,6 +184,7 @@ header ul li:hover{
     padding: 10px;
     cursor: pointer;
     position: relative;
+    margin-bottom: 1px;
 }
 
 #card-desc{
@@ -186,11 +220,10 @@ header ul li:hover{
 .view-container{
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
+    justify-content: flex-start;
     align-items: center;
     width: 100%;
     height: 100%;
-    overflow-y: scroll;
 }
 
 .title-info{
@@ -201,6 +234,27 @@ header ul li:hover{
     align-items: center;
     border: 1px solid black;
     margin-top: 10px;
+}
+
+.title-info-new{
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.title-info-new h1{
+    padding: 10px;
+    width: 100%;
+    text-align: center;
+}
+
+.title-info h1{
+    padding: 10px;
+    width: 100%;
+    text-align: center;
 }
 
 .title-info h2{
@@ -234,39 +288,57 @@ header ul li:hover{
 }
 
 .social ul{
-    width: 30%;
+    width: 20%;
+    height: 100%;
     display: flex;
     justify-content: space-around;
     align-items: center;
     list-style: none;
 }
 
-.social input[type="button"]{
-    width: 10%;
-    height: 2rem;
+.social ul li{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.actions{
+    width: 20%;
+    height: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+
+.actions input[type="button"]{
+    width: 76px;
+    height: 28px;
 }
 
 #divHeader{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0;
+}
+
+#divHeader h2{
     margin-top: 15px;
     margin-bottom: 10px;
 }
 
 .ingredients{
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-gap: 5px;
     width: 70%;
-    text-align: center;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
     padding: 10px 30px;
-    list-style: none;
     border: 1px solid black;
 }
 
-.ingredients li{
-    width: 80%;
-    height: 100%;
-    border-bottom: 1px dashed black;
-    padding-bottom: 5px;
+.ingredients ul li{
+    margin-bottom: 5px;
 }
 
 .directions{
@@ -280,6 +352,10 @@ header ul li:hover{
 .mobile-directions{
     display: none;
     list-style-type: decimal;
+}
+
+.ingredientsMobile{
+    display: none;
 }
 
 .split-container{
@@ -340,6 +416,13 @@ header ul li:hover{
 .settingsContainer{
     width: 96vw;
     padding: 2vw;
+	
+    overflow-y: scroll; 
+    -ms-overflow-style: none;
+}
+
+.settingsContainer::-webkit-scrollbar{
+    display: none;
 }
 
 .optionPanel{
@@ -361,4 +444,1117 @@ header ul li:hover{
 
 .optionPanel input:hover{
     background-color: lightsteelblue;
+}
+
+.new-recipe-form{
+    width: 70%;
+    max-height: 83vh;
+    margin-top: 10px;
+    
+    overflow-y: scroll; 
+    -ms-overflow-style: none;
+}
+
+.new-recipe-form::-webkit-scrollbar{
+    display: none;
+}
+
+.new-recipe-table{
+    width: 50%;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.new-recipe-table tr{
+    margin-bottom: 10px;
+}
+
+#form-prompt{
+    font-size: 1.1rem;
+    font-weight: bold;
+    width: 30%;
+    margin-top: 10px;
+}
+
+.new-recipe-table input[type="text"]{
+    width: 100%;
+    height: 1.5rem;
+    margin-bottom: 10px;
+    padding: 2px 5px;
+    font-size: 17px;
+}
+
+.new-recipe-table textarea{
+    resize: none;
+    padding: 5px;
+    width: 100%;
+    font-size: 17px;
+    margin-bottom: 10px;
+}
+
+.new-recipe-table input[type="checkbox"]{
+    width: 1rem;
+    height: 1rem;
+    vertical-align: bottom;
+}
+
+.new-recipe-table select{
+    width: 100%;
+    height: 1.5rem;
+    font-size: 17px;
+    margin-bottom: 10px;
+}
+
+.new-recipe-table select option{
+    width: 100%;
+    text-align: center;
+}
+
+.ingredient-list input[type="text"], .direction-list input[type="text"]{
+    width: 95%;
+}
+
+.ingredient-list input[type="button"], .direction-list input[type="button"]{
+    width: 1.2rem;
+    height: 1.2rem;
+    border-radius: 3.6rem;
+    border: 1px solid black;
+}
+
+.new-recipe-table input[type="submit"]{
+    width: 90%;
+    height: 2.25rem;
+    border: 1px solid black;
+    border-radius: 3px;
+    margin-top: 20px;
+    cursor: pointer;
+}
+
+.setting-options{
+    width: 50%;
+    text-align: center;
+}
+
+.setting-options h3{
+    width: 100%;
+    text-align: center;
+}
+
+.setting-options form table{
+    margin: 0 auto;
+    font-size: 1.3rem;
+}
+
+.setting-options form table input{
+    font-size: 1.1rem;
+    margin-bottom: 10px;
+    border: 1px solid black;
+    border-radius: 3px;
+    padding: 5px;
+}
+
+#divide-border{
+    border-top: 2px dashed black;
+    border-bottom: 2px dashed black;
+    margin: 20px 0px;
+    padding: 20px 0px;
+    width: 100%;
+}
+
+.nav-active{
+    transform: translateX(0%);
+}
+
+@keyframes navLinkFade{
+    from{
+        opacity: 0;
+        transform: translateX(50px);
+    }to{
+        opacity: 1;
+        transform: translateX(0px);
+    }
+}
+
+.hamburger-toggle .line1{
+    transform: rotate(-45deg) translate(-3px, 3px);
+}
+
+.hamburger-toggle .line2{
+    display: none;
+}
+
+.hamburger-toggle .line3{
+    transform: rotate(45deg) translate(-3px, -3px);
+}
+
+/* 4k */
+@media only screen and (min-width: 2560px) {
+    .logo{
+        font-size: 3.5rem;
+    }
+
+    .searchDiv input[type="text"]{
+        font-size: 1.8rem;
+    }
+
+    .searchDiv input[type="button"]{
+        font-size: 1.8rem;
+    }
+
+    header ul{
+        width: 17vw;
+    }
+
+    header ul li{
+        font-size: 2rem;
+    }
+
+    .dishTypeDiv{
+        width: 15%;
+    }
+
+    .button{
+        font-size: 1.8rem;
+        height: 100px;
+    }
+
+    .recipeCard h3{
+        font-size: 2rem;
+    }
+    
+    #card-desc{
+        margin: 5px 0;
+        width: 75%;
+        font-size: 1.3rem;
+    }
+    
+    .tags{
+        width: 65%;
+    }
+    
+    #dType{
+        padding: 5px;
+        background-color: palegreen;
+        border-radius: 10px;
+        font-size: 1.3rem;
+    }
+    
+    #prepTime{
+        padding: 5px;
+        background-color: pink;
+        border-radius: 10px;
+        font-size: 1.3rem;
+    }
+    
+    #cookTime{
+        padding: 5px;
+        background-color: powderblue;
+        border-radius: 10px;
+        font-size: 1.3rem;
+    }
+
+    .title-info h1, .title-info-new h1{
+        font-size: 2.5rem;
+    }
+
+    .title-info h4{
+        font-size: 1.5rem;
+    }
+    
+    .social ul{
+        width: 12%;
+    }
+
+    .actions{
+        width: 12%;
+    }
+
+    .actions input{
+        font-weight: bold;
+    }
+
+    #divHeader h2{
+        font-size: 2rem;
+    }
+
+    .ingredients ul li, .desk-directions{
+        font-size: 1.7rem;
+    }
+
+    #form-prompt{
+        font-size: 1.7rem;
+    }
+
+    .new-recipe-table input[type="text"]{
+        height: 2rem;
+        font-size: 1.5rem;
+    }
+    
+    .new-recipe-table textarea{
+        font-size: 1.5rem;
+    }
+
+    .new-recipe-table select{
+        height: 2rem;
+        font-size: 1.5rem;
+    }
+
+    .new-recipe-table input[type="checkbox"]{
+        width: 1.5rem;
+        height: 1.5rem;
+        font-weight: bold;
+    }
+
+    .ingredient-list input[type="text"], .direction-list input[type="text"]{
+        width: 88%;
+    }
+
+    .ingredient-list input[type="button"], .direction-list input[type="button"]{
+        width: 2rem;
+        height: 2rem;
+        border-radius: 6rem;
+        font-size: 1.3rem;
+    }
+
+    .new-recipe-table input[type="submit"]{
+        width: 100%;
+        height: 3rem;
+        font-size: 1.5rem;
+    }
+
+    .optionPanel{
+        height: 3.5rem;
+    }
+    
+    .optionPanel input{
+        font-size: 1.5rem;
+    }
+
+    .setting-options h3{
+        font-size: 1.7rem;
+    }
+
+    .setting-options form table{
+        font-size: 1.5rem;
+    }
+
+    .setting-options form table input{
+        font-size: 1.3rem;
+    }
+
+    .logTitle{
+        font-size: 3rem;
+    }
+
+    .logPrompt{
+        font-size: 1.8rem;
+    }
+
+    .logInput{
+        height: 2rem;
+        font-size: 1.5rem;
+    }
+
+    .logSumbit{
+        height: 2.5rem;
+        font-size: 1.5rem;
+    }
+
+
+}
+
+/*L Laptop*/
+@media only screen and (max-width: 1440px) {
+    .logo{
+        font-size: 2rem;
+    }
+
+    .searchDiv input[type="text"]{
+        font-size: 1.3rem;
+    }
+
+    .searchDiv input[type="button"]{
+        font-size: 1.1rem;
+    }
+
+    header ul{
+        width: 20vw;
+    }
+
+    header ul li{
+        font-size: 1.3rem;
+    }
+
+    .dishTypeDiv{
+        width: 12%;
+    }
+
+    .recipeCard h3{
+        font-size: 1.7rem;
+    }
+    
+    #card-desc{
+        margin: 5px 0;
+        width: 75%;
+        font-size: 1rem;
+    }
+    
+    .tags{
+        width: 80%;
+    }
+    
+    #dType{
+        padding: 5px;
+        background-color: palegreen;
+        border-radius: 10px;
+        font-size: 1rem;
+    }
+    
+    #prepTime{
+        padding: 5px;
+        background-color: pink;
+        border-radius: 10px;
+        font-size: 1rem;
+    }
+    
+    #cookTime{
+        padding: 5px;
+        background-color: powderblue;
+        border-radius: 10px;
+        font-size: 1rem;
+    }
+
+    .title-info h1, .title-info-new h1{
+        font-size: 2rem;
+    }
+
+    .title-info h4{
+        font-size: 1.1rem;
+    }
+    
+    .social ul{
+        width: 18%;
+    }
+
+    .actions{
+        width: 18%;
+    }
+
+    .actions input{
+        font-weight: bold;
+    }
+
+    #divHeader h2{
+        font-size: 1.5rem;
+    }
+
+    .ingredients ul li, .desk-directions{
+        font-size: 1.1rem;
+    }
+
+    #form-prompt{
+        font-size: 1.2rem;
+    }
+
+    .new-recipe-table input[type="text"]{
+        height: 1.4rem;
+        font-size: 1.1rem;
+    }
+    
+    .new-recipe-table textarea{
+        font-size: 1.1rem;
+    }
+
+    .new-recipe-table select{
+        height: 1.4rem;
+        font-size: 1.1rem;
+    }
+
+    .new-recipe-table input[type="checkbox"]{
+        width: 1.3rem;
+        height: 1.3rem;
+        font-weight: bold;
+    }
+
+    .ingredient-list input[type="text"], .direction-list input[type="text"]{
+        width: 88%;
+    }
+
+    .ingredient-list input[type="button"], .direction-list input[type="button"]{
+        width: 1.3rem;
+        height: 1.3rem;
+        border-radius: 3.9rem;
+        font-size: 1.1rem;
+    }
+
+    .new-recipe-table input[type="submit"]{
+        height: 2rem;
+        font-size: 1.3rem;
+    }
+
+    .optionPanel{
+        height: 2.1rem;
+    }
+    
+    .optionPanel input{
+        font-size: 1.2rem;
+    }
+
+    .setting-options h3{
+        font-size: 1.1rem;
+    }
+
+    .setting-options form table{
+        font-size: 1rem;
+    }
+
+    .setting-options form table input{
+        font-size: 0.8rem;
+    }
+
+    .logTitle{
+        font-size: 2rem;
+    }
+
+    .logPrompt{
+        font-size: 1.4rem;
+    }
+
+    .logInput{
+        height: 1.5rem;
+        font-size: 1rem;
+    }
+
+    .logSumbit{
+        height: 2rem;
+        font-size: 1.3rem;
+    }
+
+
+}
+
+/*Laptop*/
+@media only screen and (max-width: 1024px) {
+    .logo{
+        font-size: 1.5rem;
+    }
+
+    .searchDiv input[type="text"]{
+        font-size: 1rem;
+    }
+
+    .searchDiv input[type="button"]{
+        font-size: .75rem;
+    }
+
+    header ul{
+        width: 20vw;
+    }
+
+    header ul li{
+        font-size: 0.9rem;
+    }
+
+    .dishTypeDiv{
+        width: 12%;
+    }
+
+    .button{
+        width: 100%;
+        height: 55px;
+        font-size: .9rem;
+    }
+
+    .recipeCard h3{
+        font-size: 1.3rem;
+    }
+    
+    #card-desc{
+        margin: 5px 0;
+        width: 75%;
+        font-size: .73rem;
+    }
+    
+    .tags{
+        width: 80%;
+    }
+    
+    #dType{
+        font-size: .7rem;
+    }
+    
+    #prepTime{
+        font-size: .7rem;
+    }
+    
+    #cookTime{
+        font-size: .7rem;
+    }
+
+    .title-info h1, .title-info-new h1{
+        font-size: 1.5rem;
+    }
+
+    .title-info h4{
+        font-size: 1.1rem;
+    }
+    
+    .social ul{
+        width: 25%;
+    }
+
+    .actions{
+        width: 25%;
+    }
+
+    .actions input{
+        font-weight: bold;
+    }
+
+    #divHeader h2{
+        font-size: 1.2rem;
+    }
+
+    .ingredients ul li, .desk-directions{
+        font-size: 1rem;
+    }
+
+    #form-prompt{
+        font-size: 0.85rem;
+    }
+
+    .new-recipe-table input[type="text"]{
+        height: 1rem;
+        font-size: 0.9rem;
+    }
+    
+    .new-recipe-table textarea{
+        font-size: 0.9rem;
+    }
+
+    .new-recipe-table select{
+        height: 1rem;
+        font-size: 0.9rem;
+    }
+
+    .new-recipe-table input[type="checkbox"]{
+        width: 0.9rem;
+        height: 0.9rem;
+    }
+
+    .ingredient-list input[type="text"], .direction-list input[type="text"]{
+        width: 88%;
+    }
+
+    .ingredient-list input[type="button"], .direction-list input[type="button"]{
+        width: 1rem;
+        height: 1rem;
+        border-radius: 3rem;
+        font-size: 0.9rem;
+    }
+
+    .new-recipe-table input[type="submit"]{
+        height: 1.5rem;
+        font-size: 1.1rem;
+    }
+
+    .optionPanel{
+        height: 1.8rem;
+    }
+    
+    .optionPanel input{
+        font-size: 0.8rem;
+    }
+
+    .setting-options h3{
+        font-size: 1rem;
+    }
+
+    .setting-options form table{
+        font-size: 0.9rem;
+    }
+
+    .setting-options form table input{
+        font-size: 0.7rem;
+    }
+
+    .logTitle{
+        font-size: 1.5rem;
+    }
+
+    .logPrompt{
+        font-size: 1rem;
+    }
+
+    .logInput{
+        height: 1.1rem;
+        font-size: 0.9rem;
+    }
+
+    .logSumbit{
+        height: 1.5rem;
+        font-size: 1rem;
+    }
+
+
+}
+
+/* tablet */
+@media only screen and (max-width: 768px) {
+    .logo{
+        font-size: 1.5rem;
+    }
+
+    body{
+        overflow: hidden;
+    }
+
+    .searchDiv input[type="text"]{
+        font-size: 1rem;
+        width: 95%;
+    }
+
+    .searchDiv input[type="button"]{
+        font-size: .75rem;
+        display: none;
+    }
+
+    header ul{
+        position: absolute;
+        right: 0px;
+        height: 93vh;
+        width: 22%;
+        top: 7vh;
+        background-color: brown;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        z-index: 2;
+        transform: translateX(100%);
+        transition: transform 0.5s ease in;
+        
+        overflow-y: scroll; 
+        -ms-overflow-style: none;
+    }
+
+    header ul::-webkit-scrollbar{
+        display: none;
+    }
+
+    .burger{
+        display: block;
+    }
+
+    header ul li{
+        opacity: 0;
+        font-size: 0.9rem;
+    }
+
+    .mob{
+        display: block;
+    }
+
+    .mob:hover{
+        background-color: rgba(1,1,1,0);
+    }
+
+    .dishTypeDiv{
+        display: none;
+    }
+
+    .button{
+        width: 100%;
+        height: 55px;
+        font-size: .9rem;
+    }
+
+    .recipeCard h3{
+        font-size: 1.3rem;
+    }
+    
+    #card-desc{
+        margin: 5px 0;
+        width: 75%;
+        font-size: .73rem;
+    }
+    
+    .tags{
+        width: 100%;
+    }
+    
+    #dType{
+        font-size: .7rem;
+    }
+    
+    #prepTime{
+        font-size: .7rem;
+    }
+    
+    #cookTime{
+        font-size: .7rem;
+    }
+
+    .title-info h1, .title-info-new h1{
+        font-size: 1.5rem;
+    }
+
+    .title-info h4{
+        font-size: 1.1rem;
+    }
+    
+    .social ul{
+        width: 35%;
+    }
+
+    .actions{
+        width: 35%;
+    }
+
+    .actions input{
+        font-weight: bold;
+    }
+
+    #divHeader h2{
+        font-size: 1.2rem;
+    }
+
+    .ingredients ul li, .desk-directions{
+        font-size: 1rem;
+    }
+
+    .new-recipe-table{
+        width: 100%;
+    }
+
+    #form-prompt{
+        font-size: 1rem;
+    }
+
+    .new-recipe-table input[type="text"]{
+        height: 1.5rem;
+        font-size: 1rem;
+    }
+    
+    .new-recipe-table textarea{
+        font-size: 1rem;
+    }
+
+    .new-recipe-table select{
+        height: 1.5rem;
+        font-size: 1rem;
+    }
+
+    .new-recipe-table input[type="checkbox"]{
+        width: 1.4rem;
+        height: 1.4rem;
+    }
+
+    .ingredient-list input[type="text"], .direction-list input[type="text"]{
+        width: 88%;
+    }
+
+    .ingredient-list input[type="button"], .direction-list input[type="button"]{
+        width: 1.4rem;
+        height: 1.4rem;
+        border-radius: 4.2rem;
+        font-size: 1rem;
+    }
+
+    .new-recipe-table input[type="submit"]{
+        height: 1.5rem;
+        font-size: 1.1rem;
+    }
+
+    .optionPanel{
+        height: 1.8rem;
+        width: 50%;
+    }
+    
+    .optionPanel input{
+        width: 40%;
+        font-size: 0.8rem;
+    }
+
+    .setting-options h3{
+        font-size: 1rem;
+    }
+
+    .setting-options form table{
+        font-size: 0.9rem;
+    }
+
+    .setting-options form table input{
+        font-size: 0.7rem;
+    }
+
+    #half1, #half2{
+        padding-right: 15px;
+    }
+
+    .logTitle{
+        font-size: 1.5rem;
+    }
+
+    .logPrompt{
+        font-size: 1rem;
+    }
+
+    .logInput{
+        height: 1.1rem;
+        font-size: 0.9rem;
+    }
+
+    .logSumbit{
+        height: 1.5rem;
+        font-size: 1rem;
+    }
+
+}
+
+/* Mobile L */
+@media only screen and (max-width: 425px) {
+    .logo{
+        font-size: 1.2rem;
+        letter-spacing: normal;
+    }
+
+    .searchDiv{
+        text-align: center;
+    }
+
+    .searchDiv input[type="text"]{
+        font-size: .8rem;
+        width: 85%;
+    }
+
+    header ul{
+        width: 50%;
+    }
+
+    .recipeCardDiv, .recipeCardDiv-personal{
+        
+        grid-template-columns: 1fr;
+    }
+
+    
+    .title-info, .title-info-new {
+        width: 90%;
+    }
+
+    .title-info h1, .title-info-new h1{
+        font-size: 1.5rem;
+    }
+
+    .title-info h4{
+        font-size: 1.1rem;
+    }
+
+    .view-tags{
+        width: 100%;
+    }
+    
+    .social ul{
+        width: 45%;
+    }
+
+    .actions{
+        width: 45%;
+    }
+
+    .actions input{
+        font-weight: bold;
+    }
+
+    #divHeader h2{
+        font-size: 1.2rem;
+        width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+        border-bottom: 1px solid black;
+        text-align: center;
+    }
+
+    .ingredients {
+        justify-content: space-between;
+        border: none;
+    }
+
+    .desk-directions, .ingredients{
+        display: none;
+    }
+
+    .mobile-directions, .ingredientsMobile{
+        display: block;
+        list-style-position: inside;
+        text-align: justify;
+        margin: 0px auto;
+    }
+
+    .ingredients ul li, .mobile-directions{
+        font-size: 1rem;
+    }
+
+    .new-recipe-table{
+        width: 100%;
+    }
+
+    #form-prompt{
+        font-size: 1rem;
+    }
+
+    .new-recipe-table input[type="text"]{
+        height: 1.2rem;
+        font-size: 1rem;
+    }
+    
+    .new-recipe-table textarea{
+        font-size: 1rem;
+    }
+
+    .new-recipe-table select{
+        height: 1.5rem;
+        font-size: 1rem;
+    }
+
+    .new-recipe-table input[type="checkbox"]{
+        width: 1.2rem;
+        height: 1.2rem;
+    }
+
+    .ingredient-list input[type="text"], .direction-list input[type="text"]{
+        width: 88%;
+    }
+
+    .ingredient-list input[type="button"], .direction-list input[type="button"]{
+        width: 1.2rem;
+        height: 1.2rem;
+        border-radius: 3.6rem;
+        font-size: 1rem;
+    }
+
+    .new-recipe-table input[type="submit"]{
+        height: 1.5rem;
+        font-size: 1.1rem;
+    }
+
+    .optionPanel{
+        height: 1.8rem;
+        width: 75%;
+    }
+    
+    .optionPanel input{
+        width: 40%;
+        font-size: 0.8rem;
+    }
+
+    .setting-options{
+        width: 90%;
+    }
+
+    .split-container{
+        width: 100%;
+        height: 93vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+    }    
+    
+    .logTitle{
+        font-size: 1.5rem;
+    }
+
+    .logPrompt{
+        font-size: 1rem;
+    }
+
+    #half1{
+        width: 90%;
+        height: 40%;
+        border: none;
+        border-bottom: 1px dashed black;
+        padding: 0px;
+        margin: auto 0px;
+    }
+
+    #half2{
+        width: 90%;
+        height: 40%;
+        padding: 0px;
+        margin: 5px 0px;
+    }
+
+    .split-container input{
+        width: 100%;
+        height: 30px;
+        font-size: 0.9rem;
+        border: 1px solid black;
+        border-radius: 3px;
+    }
+
+}
+
+/* Mobile M */
+@media only screen and (max-width: 375px) {
+
+    .social{
+        flex-direction: column;
+    }
+
+    .social ul{
+        width: 55%;
+        margin: 5px auto;
+    }
+
+    .actions{
+        width: 55%;
+        margin: 5px auto;
+    }
+
+}
+
+/* Mobile S */
+@media only screen and (max-width: 320px) {
+
+    .logo{
+        font-size: 1rem;
+        letter-spacing: normal;
+    }
+
+    .searchDiv input[type="text"]{
+        font-size: .7rem;
+    }
+
+    .tags{
+        flex-direction: column;
+    }
+
+    #dType, #prepTime{
+        margin-bottom: 5px;
+    }
+
+    .title-info{
+        border: none;
+    }
+
+    .view-tags{
+        flex-direction: column;
+        margin: 10px auto;
+        width: 90%;
+    }
+
+    .social ul{
+        width: 65%;
+        margin: 5px auto;
+    }
+
+    .actions{
+        width: 65%;
+        margin: 5px auto;
+    }
+
+    .new-recipe-form{
+        width: 90%;
+    }
 }
